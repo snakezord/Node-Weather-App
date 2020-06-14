@@ -63,10 +63,11 @@ app.get('/weather', (req, res) => {
         
         forecast(data, ({current} = {}) => {
             res.send({
-                forecast: `${current.temperature}°C, Wind ${current.wind_dir} at ${current.wind_speed} Km/h, ${current.humidity}% Humidity`,
-                address: data.features[0].place_name,
-                center: data.features[0].center
-            })
+              forecast: `${current.temperature}°C, Wind ${current.wind_dir} at ${current.wind_speed} Km/h, ${current.humidity}% Humidity`,
+              address: data.features[0].place_name,
+              center: data.features[0].center,
+              icon: current.weather_icons[0]
+            });
         })                         
     })
 });
