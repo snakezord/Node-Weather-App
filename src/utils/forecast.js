@@ -10,7 +10,7 @@ const forecast = (body, callback) => {
     request(url, options, (err, res, body) => {
         if (err) callback('FORECAST: Couldn\'t make the API call.');
         
-        else if (body.location.name === null) callback('FORECAST: Wrong Address.')
+        else if (body.location.name === null) callback('Wrong Address.')
         
         else if (res.statusCode === 200) callback(body);
     });

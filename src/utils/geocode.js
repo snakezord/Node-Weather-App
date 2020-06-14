@@ -9,7 +9,7 @@ const geocode = (address, callback) => {
     request(url, options, (err, res, body) => {
         if (err) callback('GEOCODE: Couldn\'t make the API call.', true);
         
-        else if (body.features.length === 0) callback('GEOCODE: Wrong Address.', true)
+        else if (body.features.length === 0) callback('Wrong Address.', true)
 
         else if (res.statusCode === 200) callback(body, false);         
     });

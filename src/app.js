@@ -64,7 +64,8 @@ app.get('/weather', (req, res) => {
         forecast(data, ({current} = {}) => {
             res.send({
                 forecast: `${current.temperature}°C, Wind ${current.wind_dir} at ${current.wind_speed} Km/h, ${current.humidity}% Humidity`,
-                address: data.features[0].place_name
+                address: data.features[0].place_name,
+                center: data.features[0].center
             })
         })                         
     })
@@ -84,7 +85,7 @@ app.get('/help/*', (req, res) => {
     })
 })
 
-// Match anythin g that hasn't been matched before
+// Match anything that hasn't been matched before
 app.get('*', (req, res) => { // Must be last!
     res.render('404', {
         title: '404 page not found Amigo',
