@@ -43,14 +43,14 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'I would bang her so hard',
+        title: 'Bangable hot babe png',
         name: 'Roman Walls'
     })
 });
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        message: 'Helping message',
+        message: 'gibe me job plzz',
         title: 'Help', 
         name: 'Roman Walls'
     })
