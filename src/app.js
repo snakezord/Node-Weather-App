@@ -10,6 +10,7 @@ const viewsDir = path.join(__dirname, "../templates/views")
 const partialsDir = path.join(__dirname, "../templates/partials") 
 
 const app = express()
+const port = process.env.PORT || 3000;
 
 /* Setup Handlebars engine and views location */
 app.set('view engine', 'hbs') // template rendering engine Handlebars
@@ -90,8 +91,8 @@ app.get('*', (req, res) => { // Must be last!
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => { 
+    console.log('Server is up on port ' + port);
 });
 
  
