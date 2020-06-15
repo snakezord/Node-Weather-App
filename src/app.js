@@ -57,7 +57,7 @@ app.get('/help', (req, res) => {
 });
 
 app.get('/weather', (req, res) => {
-    if (!req.query.address) return res.send({ error: 'Your must provide an address term'})
+    if (!req.query.address) return res.send({ error: 'Your must provide an valid address'})
     geocode(req.query.address, (data, err) => {
         if(err) return res.send({error: data})
         
@@ -71,14 +71,15 @@ app.get('/weather', (req, res) => {
         })                         
     })
 });
-
+/* 
+TEST
 app.get('/products', (req, res) => {
     if(!req.query.search) return res.send({error: 'Your must provide a search term'})
 
     res.send({
         products: []
     })
-});
+}); */
 
 app.get('/help/*', (req, res) => {
     res.render("404", {
