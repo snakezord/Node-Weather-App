@@ -43,15 +43,15 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'Bangable hot babe png',
+        title: 'About this page',
         name: 'Roman Walls'
     })
 });
 
-app.get('/help', (req, res) => {
-    res.render('help', {
-        message: 'gibe me job plzz',
-        title: 'Help', 
+app.get('/wai', (req, res) => {
+    res.render('wai', {
+        message: 'Hello, my name is Roman Zhydyk. I\'m focused and quick learning Software Engineer. Experienced with the latest cutting edge development tools and procedures. Equipped with a diverse and promising skill-set. Able to effectively self-manage during independent projects, as well as collaborate as part of a productive team. ',
+        title: 'Who am I?', 
         name: 'Roman Walls'
     })
 });
